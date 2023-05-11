@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,19 +35,19 @@ public class ProgramingLanguageController {
 	}
 	
 	@PostMapping("/add")
-	public  void add(@RequestBody() CreateProgramingLanguageRequest createProgramingLanguageRequest) {
+	public  void add(CreateProgramingLanguageRequest createProgramingLanguageRequest) {
 		this.programingLanguageService.add(createProgramingLanguageRequest);
 		
 	}
 	
 	@PutMapping("/update")
-	public  void update( @RequestBody() UpdateProgramingLanguageRequest updateProgramingLanguageRequest) {
+	public  void update(UpdateProgramingLanguageRequest updateProgramingLanguageRequest) {
 		this.programingLanguageService.update(updateProgramingLanguageRequest);
 		
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(@RequestBody() DeleteProgramingLanguageRequest deleteProgramingLanguageRequest) {
+	public void delete(DeleteProgramingLanguageRequest deleteProgramingLanguageRequest) {
 		this.programingLanguageService.delete(deleteProgramingLanguageRequest);
 	}
 	

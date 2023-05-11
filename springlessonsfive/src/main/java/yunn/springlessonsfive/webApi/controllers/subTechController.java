@@ -36,18 +36,18 @@ public class subTechController {
 	}
 	
 	@PostMapping("/add")
-	public  void add(@RequestBody() CreateSubTechRequest createSubTechRequest) {
+	public  void add(CreateSubTechRequest createSubTechRequest) {
 		this.subTechService.add(createSubTechRequest);
 		
 	}
 	@PutMapping("/update")
-	public  void update(@RequestBody() UpdateSubTechRequest subTechRequest) {
+	public  void update(UpdateSubTechRequest subTechRequest) {
 		this.subTechService.update(subTechRequest);
 		
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(@RequestBody() DeleteSubTechRequest deleteSubTechRequest) {
+	public void delete(DeleteSubTechRequest deleteSubTechRequest) {
 		this.subTechService.delete(deleteSubTechRequest);
 	}
 	
