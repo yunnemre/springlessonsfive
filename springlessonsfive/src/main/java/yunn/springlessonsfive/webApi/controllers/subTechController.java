@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,18 +36,18 @@ public class subTechController {
 	}
 	
 	@PostMapping("/add")
-	public  void add(CreateSubTechRequest createSubTechRequest) {
+	public  void add(@RequestBody() CreateSubTechRequest createSubTechRequest) {
 		this.subTechService.add(createSubTechRequest);
 		
 	}
 	@PutMapping("/update")
-	public  void update(UpdateSubTechRequest subTechRequest) {
+	public  void update(@RequestBody() UpdateSubTechRequest subTechRequest) {
 		this.subTechService.update(subTechRequest);
 		
 	}
 	
 	@DeleteMapping("/delete")
-	public void delete(DeleteSubTechRequest deleteSubTechRequest) {
+	public void delete(@RequestBody() DeleteSubTechRequest deleteSubTechRequest) {
 		this.subTechService.delete(deleteSubTechRequest);
 	}
 	

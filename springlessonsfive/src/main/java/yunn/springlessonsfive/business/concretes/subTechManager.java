@@ -8,6 +8,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import io.micrometer.common.util.StringUtils;
+import lombok.AllArgsConstructor;
 import yunn.springlessonsfive.business.abstracts.subTechService;
 import yunn.springlessonsfive.business.requests.subTechRequests.CreateSubTechRequest;
 import yunn.springlessonsfive.business.requests.subTechRequests.DeleteSubTechRequest;
@@ -20,6 +21,7 @@ import yunn.springlessonsfive.entities.concretes.ProgramingLanguage;
 import yunn.springlessonsfive.entities.concretes.subTechnology;
 
 @Service
+@AllArgsConstructor
 public class subTechManager implements subTechService {
 
 	private subTechRepository subTechRepository;
@@ -27,12 +29,6 @@ public class subTechManager implements subTechService {
 	
 	
 
-	public subTechManager(yunn.springlessonsfive.dataAccess.abstracts.subTechRepository subTechRepository,
-			ProgramingLanguageRepository programingLanguageRep) {
-		super();
-		this.subTechRepository = subTechRepository;
-		this.programingLanguageRep=programingLanguageRep;
-	}
 
 	@Override
 	public List<GetAllSubTechResponse> getAll() {

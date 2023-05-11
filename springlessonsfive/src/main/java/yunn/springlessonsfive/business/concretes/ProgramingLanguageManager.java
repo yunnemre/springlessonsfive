@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.micrometer.common.util.StringUtils;
+import lombok.AllArgsConstructor;
 import yunn.springlessonsfive.business.abstracts.ProgramingLanguageService;
 import yunn.springlessonsfive.business.requests.programingLanguageRequests.CreateProgramingLanguageRequest;
 import yunn.springlessonsfive.business.requests.programingLanguageRequests.DeleteProgramingLanguageRequest;
@@ -22,17 +22,13 @@ import yunn.springlessonsfive.entities.concretes.subTechnology;
 
 
 @Service
+@AllArgsConstructor
 public class ProgramingLanguageManager implements ProgramingLanguageService {
 	
 	private ProgramingLanguageRepository programingLanguageRepository;
 	private subTechRepository subTechRepository;
 	
-	@Autowired
-	public ProgramingLanguageManager(ProgramingLanguageRepository programingLanguageRepository,subTechRepository subTechRepository) {
-		super();
-		this.programingLanguageRepository = programingLanguageRepository;
-		this.subTechRepository=subTechRepository;
-	}
+	
 
 	@Override
 	public List<GetAllProgramingLanguagesResponse> getAll() {
@@ -105,7 +101,7 @@ public class ProgramingLanguageManager implements ProgramingLanguageService {
 		GetByIdProgramingLanguageResponse getByIdLanguageResponse = new GetByIdProgramingLanguageResponse();
 
 		if (optional.isPresent()) {
-
+			
 			getByIdLanguageResponse.setId(optional.get().getProgramingLanguageId());
 			getByIdLanguageResponse.setName(optional.get().getName());
 			List<String> sslist= new ArrayList <String>();
